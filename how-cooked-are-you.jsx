@@ -319,13 +319,6 @@ const BADGES = [
 
 const MEME_REACTIONS = ["💀", "😭", "🔥", "☠️", "💔", "😤", "🤡", "👀", "😰", "🫠"];
 
-const TESTIMONIALS = [
-  { name: "Riya S., CS Junior", text: "It said I had a 12% survival rate. It was right. I dropped 2 courses.", avatar: "🧑‍💻" },
-  { name: "Arjun M., Engineering Soph.", text: "The AI roast was so accurate it felt like it hacked my diary.", avatar: "😭" },
-  { name: "Priya K., Commerce Final Year", text: "I showed my parents. They cried. I cried. The AI did not.", avatar: "💀" },
-  { name: "Dev R., MBA Student", text: "I got 'Academic Villain: Chaos Gremlin'. Framing it.", avatar: "🤌" },
-];
-
 const VILLAIN_TYPES = [
   "The Ghost Student — shows up only for exams and vibes",
   "The Chaos Gremlin — somehow submits at 11:59:59 PM every time",
@@ -630,18 +623,12 @@ export default function App() {
 
         {/* Stats */}
         <div className="flex flex-wrap gap-6 justify-center mb-12">
-          {[
-            { label: "students emotionally destroyed", val: 12431, icon: "💀" },
-            { label: "semesters predicted", val: 8940, icon: "📊" },
-            { label: "tears collected", val: 47200, icon: "😭" },
-          ].map((s, i) => (
-            <div key={i} className="glass-card px-5 py-3 rounded-2xl text-center">
-              <div className="text-2xl font-black text-white font-mono">
-                {s.icon} <AnimatedCounter target={s.val} />
-              </div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">{s.label}</div>
+          <div className="glass-card px-5 py-3 rounded-2xl text-center">
+            <div className="text-2xl font-black text-white font-mono">
+              💀 <AnimatedCounter target={12431} />
             </div>
-          ))}
+            <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">students emotionally destroyed</div>
+          </div>
         </div>
 
         {/* CTA */}
@@ -652,22 +639,6 @@ export default function App() {
           ⚡ Analyze Me
         </button>
         <p className="text-xs text-gray-600">Warning: Results may cause existential crisis. Proceed anyway.</p>
-
-        {/* Testimonials */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl w-full">
-          {TESTIMONIALS.map((t, i) => (
-            <div key={i} className="glass-card p-4 rounded-2xl text-left">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-2xl">{t.avatar}</span>
-                <div>
-                  <div className="text-sm font-bold text-white">{t.name}</div>
-                  <div className="flex gap-1">{"⭐".repeat(5)}</div>
-                </div>
-              </div>
-              <p className="text-sm text-gray-400 italic">"{t.text}"</p>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
