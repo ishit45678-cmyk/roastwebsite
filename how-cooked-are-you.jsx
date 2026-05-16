@@ -621,16 +621,6 @@ export default function App() {
           No cap. No sugarcoating. Just pure, brutal honesty from an AI that doesn't care about your feelings.
         </p>
 
-        {/* Stats */}
-        <div className="flex flex-wrap gap-6 justify-center mb-12">
-          <div className="glass-card px-5 py-3 rounded-2xl text-center">
-            <div className="text-2xl font-black text-white font-mono">
-              💀 <AnimatedCounter target={12431} />
-            </div>
-            <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">students emotionally destroyed</div>
-          </div>
-        </div>
-
         {/* CTA */}
         <button
           onClick={() => setPage("input")}
