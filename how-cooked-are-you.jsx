@@ -854,7 +854,6 @@ export default function App() {
 
           {/* Share */}
           <div className="glass-card p-6 rounded-3xl text-center border border-white/10">
-            <p className="text-gray-400 text-sm mb-4">You survived the analysis. Share your pain.</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <button
                 onClick={() => {
@@ -862,21 +861,15 @@ export default function App() {
                   navigator.clipboard.writeText(text).catch(() => {});
                   alert("Copied! Go embarrass yourself on the timeline 🔥");
                 }}
-                className="px-5 py-2.5 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-sm font-bold hover:bg-cyan-500/30 transition-colors"
+                className="px-8 py-4 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-base font-bold hover:bg-cyan-500/30 transition-colors"
               >
                 📋 Copy Result
               </button>
               <button
                 onClick={() => setPage("input")}
-                className="px-5 py-2.5 rounded-xl bg-orange-500/20 border border-orange-500/40 text-orange-300 text-sm font-bold hover:bg-orange-500/30 transition-colors"
+                className="px-8 py-4 rounded-xl bg-orange-500/20 border border-orange-500/40 text-orange-300 text-base font-bold hover:bg-orange-500/30 transition-colors"
               >
                 🔄 Try Again (Maybe Lie This Time)
-              </button>
-              <button
-                onClick={() => setPage("landing")}
-                className="px-5 py-2.5 rounded-xl bg-purple-500/20 border border-purple-500/40 text-purple-300 text-sm font-bold hover:bg-purple-500/30 transition-colors"
-              >
-                🏠 Send to a More Cooked Friend
               </button>
             </div>
           </div>
