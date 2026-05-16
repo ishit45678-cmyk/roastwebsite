@@ -425,7 +425,7 @@ function CircleProgress({ value, label, color, size = 120, emoji }) {
 }
 
 // ─── Slider Input ─────────────────────────────────────────────────────────────
-function SliderInput({ label, emoji, min, max, value, onChange, markers }) {
+function SliderInput({ label, emoji, min, max, value, onChange, markers, step = 1 }) {
   const pct = ((value - min) / (max - min)) * 100;
   const marker = markers ? markers.find((m) => value <= m.at) || markers[markers.length - 1] : null;
 
@@ -438,7 +438,7 @@ function SliderInput({ label, emoji, min, max, value, onChange, markers }) {
         <span className="text-neon-cyan font-mono font-bold text-sm">{value}{label.includes("%") ? "%" : label.includes("hrs") ? "h" : ""}</span>
       </div>
       <input
-        type="range" min={min} max={max} value={value}
+        type="range" min={min} max={max} step={step} value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         className="slider w-full"
       />
@@ -670,7 +670,7 @@ export default function App() {
               { at: 100, label: "🏆 Teacher's Fave (suspicious)", bg: "#8800ff20", color: "#bb88ff" },
             ]}
           />
-          <SliderInput label="GPA / CGPA (out of 10)" emoji="📚" min={0} max={10} value={form.gpa} onChange={(v) => setForm({ ...form, gpa: v })}
+          <SliderInput label="GPA / CGPA (out of 10)" emoji="📚" min={0} max={10} step={0.5} value={form.gpa} onChange={(v) => setForm({ ...form, gpa: v })}
             markers={[
               { at: 3, label: "📉 Historical Lows", bg: "#ff003320", color: "#ff6666" },
               { at: 6, label: "😰 It's Giving Stress", bg: "#ff880020", color: "#ffaa44" },
