@@ -812,10 +812,6 @@ export default function App() {
 
           {/* Diagnosis + Villain */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            <div className="glass-card p-5 rounded-2xl border border-purple-500/20">
-              <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-2">🔬 Meme Diagnosis</div>
-              <div className="text-white font-bold text-sm leading-snug">{results.diagnosis}</div>
-            </div>
             <div className="glass-card p-5 rounded-2xl border border-cyan-500/20">
               <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-2">🎭 Academic Villain Type</div>
               <div className="text-white font-bold text-sm leading-snug">{villain}</div>
